@@ -1,0 +1,225 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a2e;
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    touch-action: manipulation;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.player-area {
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+#opponent-area {
+    background-color: #4a1a2e;
+}
+
+#player-area {
+    background-color: #1a2e4a;
+}
+
+.battlefield {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.slot {
+    width: 100px;
+    height: 150px;
+    border: 2px dashed #666;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hand {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    overflow-x: auto;
+    min-height: 180px;
+}
+
+.card {
+    width: 120px;
+    height: 180px;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #2c3e50;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.card-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.btn-habilidade {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+.btn-habilidade:hover {
+    background: #2980b9;
+}
+
+.btn-item {
+    background: #e67e22;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.card[data-tipo="ataque"] {
+    background: linear-gradient(to bottom, #ff6b6b, #ff3838);
+    color: white;
+}
+
+.card[data-tipo="ataque"] h3,
+.card[data-tipo="ataque"] p {
+    color: white;
+}
+
+.card[data-tipo="defesa"] {
+    background: linear-gradient(to bottom, #4b7bec, #3867d6);
+    color: white;
+}
+
+.card[data-tipo="defesa"] h3,
+.card[data-tipo="defesa"] p {
+    color: white;
+}
+
+.card[data-tipo="suporte"] {
+    background: linear-gradient(to bottom, #ffb8b8, #ff7676);
+    color: #8b0000;
+}
+
+.card[data-tipo="energia"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.card[data-tipo="item"] {
+    background: linear-gradient(to bottom, #95a5a6, #7f8c8d);
+    color: white;
+}
+
+#message-box {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-align: center;
+    min-height: 20px;
+}
+
+#end-turn-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+#end-turn-btn:hover {
+    background: #45a049;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 90px;
+        height: 140px;
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .slot {
+        width: 80px;
+        height: 120px;
+    }
+
+    .btn-habilidade, .btn-item {
+        padding: 3px;
+        font-size: 10px;
+    }
+}
+
+.hand-full-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(231, 76, 60, 0.9);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    z-index: 1000;
+    animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; display: none; }
+  }
