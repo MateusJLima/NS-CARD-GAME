@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal Show! - O Jogo de Cartas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Área do Oponente -->
+        <div id="opponent-area" class="player-area">
+            <div class="player-info">
+                <span class="health">Vida: <span id="opponent-health">30</span></span>
+                <span class="reality">Realidade: <span id="opponent-reality">0</span>/5</span>
+            </div>
+            <div class="energy-display">
+                <span class="energy-icon" data-energy="alegria">🌪️</span>
+                <span class="energy-icon" data-energy="tristeza">💧</span>
+                <span class="energy-icon" data-energy="raiva">🔥</span>
+                <span class="energy-icon" data-energy="medo">⚡</span>
+                <span class="energy-icon" data-energy="nojo">🌍</span>
+            </div>
+            <div id="opponent-field" class="battlefield">
+                <div class="slot" data-type="ataque"></div>
+                <div class="slot" data-type="defesa"></div>
+                <div class="slot" data-type="suporte"></div>
+            </div>
+        </div>
+
+        <!-- Área do Jogo -->
+        <div id="game-board">
+            <div id="message-box">Preparem-se para a batalha!</div>
+            <button id="end-turn-btn">Finalizar Turno</button>
+        </div>
+
+        <!-- Área do Jogador -->
+        <div id="player-area" class="player-area">
+            <div class="player-info">
+                <span class="health">Vida: <span id="player-health">30</span></span>
+                <span class="reality">Realidade: <span id="player-reality">0</span>/5</span>
+            </div>
+            <div class="energy-display">
+                <span class="energy-icon" data-energy="alegria">🌪️</span>
+                <span class="energy-icon" data-energy="tristeza">💧</span>
+                <span class="energy-icon" data-energy="raiva">🔥</span>
+                <span class="energy-icon" data-energy="medo">⚡</span>
+                <span class="energy-icon" data-energy="nojo">🌍</span>
+            </div>
+            <div id="player-field" class="battlefield">
+                <div class="slot" data-type="ataque"></div>
+                <div class="slot" data-type="defesa"></div>
+                <div class="slot" data-type="suporte"></div>
+            </div>
+            <div id="player-hand" class="hand"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/constants.js"></script>
+    <script src="js/card.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+                                                                          </html>
